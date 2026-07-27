@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}实时组合价差机会{% endblock %}
+{% block content %}
+<section class="toolbar"><input id="search" placeholder="搜索市场"><button id="refresh" class="button">立即刷新</button><a class="button ghost" href="/api/exports/opportunities.csv">导出 CSV</a></section>
+<section class="panel"><div class="table-wrap"><table><thead><tr><th>市场</th><th>Yes 加权价</th><th>No 加权价</th><th>可执行量</th><th>总成本</th><th>预计费用</th><th>预计净收益</th><th>预计净收益率</th><th>操作</th></tr></thead><tbody id="opportunity-table"><tr><td colspan="9" class="empty">正在检查真实订单簿…</td></tr></tbody></table></div></section>
+{% endblock %}

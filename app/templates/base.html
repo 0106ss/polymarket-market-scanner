@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Polymarket Market Scanner</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="/static/js/app.js" defer></script>
+</head>
+<body data-page="{{ page }}"{% if market_id %} data-market-id="{{ market_id }}"{% endif %}>
+  <aside>
+    <div class="brand"><span class="mark">PM</span><div><strong>Market Scanner</strong><small>PUBLIC DATA TERMINAL</small></div></div>
+    <nav>
+      <a href="/" class="{% if page == 'dashboard' %}active{% endif %}">总览</a>
+      <a href="/opportunities" class="{% if page == 'opportunities' %}active{% endif %}">实时机会</a>
+      <a href="/paper-trades" class="{% if page == 'paper-trades' %}active{% endif %}">模拟交易</a>
+      <a href="/history" class="{% if page == 'history' %}active{% endif %}">历史机会</a>
+      <a href="/settings" class="{% if page == 'settings' %}active{% endif %}">设置</a>
+      <a href="/logs" class="{% if page == 'logs' %}active{% endif %}">系统日志</a>
+    </nav>
+    <div class="mode"><span class="dot"></span>只读研究模式</div>
+  </aside>
+  <main>
+    <header><div><p class="eyebrow">POLYMARKET PUBLIC ORDERBOOK</p><h1>{% block title %}{% endblock %}</h1></div><div id="clock" class="clock"></div></header>
+    <div class="risk">所有收益均为基于公开订单簿的模拟计算，不代表真实成交结果或未来收益。本工具不连接钱包、不提交订单。</div>
+    <div id="error" class="error hidden"></div>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

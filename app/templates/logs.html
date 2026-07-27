@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block title %}系统事件日志{% endblock %}
+{% block content %}<section class="toolbar"><select id="log-level"><option value="">全部级别</option><option>INFO</option><option>WARNING</option><option>ERROR</option></select></section><section class="panel"><div class="table-wrap"><table><thead><tr><th>时间</th><th>级别</th><th>来源</th><th>事件</th><th>消息</th></tr></thead><tbody id="log-table"><tr><td colspan="5" class="empty">正在读取已清洗日志…</td></tr></tbody></table></div></section>{% endblock %}

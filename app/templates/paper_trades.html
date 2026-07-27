@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block title %}模拟交易记录{% endblock %}
+{% block content %}<section class="toolbar"><a class="button ghost" href="/api/exports/paper-trades.csv">导出 CSV</a></section><section class="panel"><div class="table-wrap"><table><thead><tr><th>时间</th><th>市场</th><th>目标量</th><th>可执行量</th><th>总成本</th><th>预计净收益</th><th>状态</th><th>触发</th></tr></thead><tbody id="paper-table"><tr><td colspan="8" class="empty">正在读取模拟记录…</td></tr></tbody></table></div></section>{% endblock %}
