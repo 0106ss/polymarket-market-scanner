@@ -40,7 +40,7 @@ def main() -> int:
                 line = text.count("\n", 0, match.start()) + 1
                 findings.append(f"{relative.as_posix()}:{line}: {label}")
     ignored = subprocess.run(
-        ["git", "check-ignore", ".env", ".venv", "data/scanner.db", "logs/scanner.jsonl"],
+        ["git", "check-ignore", ".env", ".venv/runtime", "data/scanner.db", "logs/scanner.jsonl"],
         cwd=ROOT,
         capture_output=True,
         text=True,
